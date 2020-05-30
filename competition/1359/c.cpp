@@ -1,5 +1,4 @@
 //https://codeforces.com/contest/1359/problem/C
-//#tech_debt
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -11,41 +10,26 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
-int getT(int n, int h, int c, int t)
-{
-    if (n % 2 == 0)
-        return (h * n / 2 + c * n / 2) / n;
-    else
-        return (h * (n / 2 + 1) + c * n / 2) / n;
-}
+double h, c, t;
 
 void solve()
 {
-    int n, h, c, t;
+    int n;
     cin >> n;
-
     while (n--)
     {
-        int l = 1, r = 1000, cur, mid, preD;
         cin >> h >> c >> t;
-        preD = getT(l, h, c, t);
-        bool flag = false;
-        while (!flag)
+        if (h + c - 2 * t >= 0)
+            cout << 2 << endl;
+        else
         {
-            mid = (l + r) / 2;
-            cur = getT(mid, h, c, t);
-            if (cur < preD)
-            {
-                l = mid;
-                preD = cur;
-            }
-            else
-            {
-                flag = true;
-                r = mid;
-            }
+            int a = h - t;
+            int b = 2 * t - c - h;
+            int k = 2 * (a / b) + 1;
+            ll val1 = abs(k / 2 * 1ll * c + (k + 1) / 2 * 1ll * h - t * 1ll * k);
+            ll val2 = abs((k + 2) / 2 * 1ll * c + (k + 3) / 2 * 1ll * h - t * 1ll * (k + 2));
+            cout << (val1 * (k + 2) <= val2 * k ? k : k + 2) << endl;
         }
-        cout << l << endl;
     }
 }
 
