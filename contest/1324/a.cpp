@@ -29,6 +29,10 @@ void solve()
 int main()
 {
     ios_b;
+#ifdef _DEBUG
+    freopen("a-input-1.txt", "r", stdin);
+    //freopen("a-output-1.txt", "w", stdout);
+#endif
     solve();
     return 0;
 }

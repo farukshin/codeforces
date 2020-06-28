@@ -1,5 +1,4 @@
 // https://codeforces.com/contest/1324/problem/B
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -35,6 +34,10 @@ void solve()
 int main()
 {
     ios_b;
+#ifdef _DEBUG
+    freopen("b-input-1.txt", "r", stdin);
+    //freopen("b-output-1.txt", "w", stdout);
+#endif
     solve();
     return 0;
 }
