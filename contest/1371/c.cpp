@@ -1,5 +1,4 @@
 // https://codeforces.com/contest/1371/problem/C
-// #tech_debt
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -20,15 +19,12 @@ void solve()
         ll a, b, n, m;
         cin >> a >> b >> n >> m;
 
-        bool success = true;
+        bool success = false;
 
-        if (n + m > a + b)
-            success = false;
+        if (m <= min(a, b) && n + m <= a + b)
+            success = true;
 
-        if (success)
-            success = a > b && b - m >= 0 || a < b && a - m >= 0;
-
-        cout << (success ? "YES" : "NO") << endl;
+        cout << (success ? "Yes" : "No") << endl;
     }
 }
 
