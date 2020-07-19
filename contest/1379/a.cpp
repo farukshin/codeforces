@@ -1,5 +1,4 @@
 // https://codeforces.com/contest/1379/problem/A
-// #tech_debt
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,6 +14,17 @@ string replaceStr(char fCh, char iCh, string s)
     return s;
 }
 
+int countPattern(const string &s, const string &pattern)
+{
+    int count = 0;
+
+    for (int i = 0; i <= s.length() - pattern.length(); i++)
+        if (s.substr(i, pattern.length()) == pattern)
+            count++;
+
+    return count;
+}
+
 void solve()
 {
     int n;
@@ -24,11 +34,7 @@ void solve()
     string pattern = "abacaba";
     int curPattern = 0;
 
-    int count = 0;
-
-    for (int i = 0; i <= n - pattern.length(); i++)
-        if (s.substr(i, pattern.length()) == pattern)
-            count++;
+    int count = countPattern(s, pattern);
 
     if (count >= 1)
     {
@@ -44,20 +50,20 @@ void solve()
 
     for (int i = 0; i <= n - pattern.length(); i++)
     {
-        bool succesSearch = true;
-        curPattern = 0;
-        while (succesSearch && curPattern != pattern.length())
-            if (s[i + curPattern] == pattern[curPattern] || s[i + curPattern] == '?')
-                curPattern++;
+        string cur = s;
+        bool succesRepl = true;
+        for (int j = 0; j < pattern.length(); j++)
+            if (s[i + j] == pattern[j] || s[i + j] == '?')
+                cur[i + j] = pattern[j];
             else
-                succesSearch = false;
+                succesRepl = false;
 
-        if (succesSearch)
+        if (succesRepl && countPattern(cur, pattern) == 1)
         {
             fl = true;
-            string ans = (i > pattern.length() ? s.substr(0, i - pattern.length()) : "") + pattern + (n - pattern.length() > i ? s.substr(i + pattern.length(), n - 1) : "");
+            string ans = replaceStr('?', 'd', cur);
             cout << "YES" << endl
-                 << replaceStr('?', 'd', ans) << endl;
+                 << ans << endl;
             break;
         }
     }
