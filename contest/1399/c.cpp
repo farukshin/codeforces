@@ -34,6 +34,9 @@ int countPair(int n, int sum)
 
 bool maxCountPair(int countCommand, int n, int sum)
 {
+    if (countCommand == 0)
+        return true;
+
     for (int curSum = sum / countCommand; curSum > 0; curSum--)
         if (countPair(n, curSum) == countCommand)
             return true;
@@ -44,14 +47,26 @@ void solve()
 {
     int n;
     cin >> n;
-    int sum = 0;
 
+    int sum = 0;
     arr.resize(n);
 
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
         sum += arr[i];
+    }
+    sort(arr.begin(), arr.end());
+
+    if (n == 1)
+    {
+        cout << 0 << endl;
+        return;
+    }
+    if (n == 2 && arr[0] == arr[1])
+    {
+        cout << 1 << endl;
+        return;
     }
 
     int countCommand;
