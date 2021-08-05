@@ -31,7 +31,8 @@ void solve()
             {
                 ans++;
                 cur = v[cur];
-            } while (cur != i);
+            }
+            while (cur != i);
             cout << ans << (i == n ? "\n" : " ");
         }
     }

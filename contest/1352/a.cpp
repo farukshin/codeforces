@@ -8,16 +8,16 @@ typedef long double ld;
 void solve()
 {
     int n;
-    cin>>n;
-    for(int i=0;i<n;i++)
+    cin >> n;
+    for(int i = 0; i < n; i++)
     {
-        string s, ans="";
-        cin>>s;
-        int k=0;
-        for(int j=0;j<s.length();j++)
+        string s, ans = "";
+        cin >> s;
+        int k = 0;
+        for(int j = 0; j < s.length(); j++)
             if(s[j] != '0')
-                ans += s[j] + string(s.length()-j-1, '0') + " ", k++;
-        cout<< k << "\n" << ans <<"\n";
+                ans += s[j] + string(s.length() - j - 1, '0') + " ", k++;
+        cout << k << "\n" << ans << "\n";
     }
 
 }

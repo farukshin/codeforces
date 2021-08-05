@@ -11,7 +11,8 @@ void solve()
     cin >> n >> x >> y;
 
     int dif = y - x;
-    for (int d = 1; d <= d; ++d) {
+    for (int d = 1; d <= d; ++d)
+    {
         if (dif % d)
             continue;
 
@@ -21,7 +22,8 @@ void solve()
         int count = min(n - 1, (y - 1) / d);
         int arr0 = y - count * d;
 
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; ++i)
+        {
             cout << (arr0 + i * d) << " ";
         }
         cout << endl;
@@ -40,7 +42,9 @@ int main()
 #endif
 
     //solve();
-    int t; cin >> t; while (t--) solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

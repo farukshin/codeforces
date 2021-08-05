@@ -10,7 +10,8 @@ void solve()
     int n, k;
     cin >> n >> k;
     int n1 = n - (k - 1);
-    if (n1 > 0 && n1 % 2 == 1) {
+    if (n1 > 0 && n1 % 2 == 1)
+    {
         cout << "YES" << endl;
         for (int i = 0; i < k - 1; ++i)
             cout << "1 ";
@@ -18,7 +19,8 @@ void solve()
         return;
     }
     int n2 = n - 2 * (k - 1);
-    if (n2 > 0 && n2 % 2 == 0) {
+    if (n2 > 0 && n2 % 2 == 0)
+    {
         cout << "YES" << endl;
         for (int i = 0; i < k - 1; ++i)
             cout << "2 ";
@@ -38,7 +40,9 @@ int main()
 #endif
 
     //solve();
-    int t; cin >> t; while (t--) solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

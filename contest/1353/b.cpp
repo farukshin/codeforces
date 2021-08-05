@@ -10,10 +10,10 @@ void solve()
     int n, k;
     cin >> n >> k;
     vector<int> v1(n);
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
         cin >> v1[i];
     vector<int> v2(n);
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
         cin >> v2[i];
     sort(v1.begin(), v1.end());
     sort(v2.rbegin(), v2.rend());
@@ -36,7 +36,9 @@ int main()
 #endif
 
     //solve();
-    int t; cin >> t; while (t--) solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

@@ -47,7 +47,8 @@ void solve()
                 success = false;
         }
 
-    } while (success && pos < n + 1);
+    }
+    while (success && pos < n + 1);
 
     cout << (success ? "YES" : "NO") << endl;
 

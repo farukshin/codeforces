@@ -8,9 +8,15 @@
 using namespace std;
 
 template <class T>
-void ckmin(T &a, T b) { a = min(a, b); }
+void ckmin(T &a, T b)
+{
+    a = min(a, b);
+}
 template <class T>
-void ckmax(T &a, T b) { a = max(a, b); }
+void ckmax(T &a, T b)
+{
+    a = max(a, b);
+}
 
 #define ios_b                         \
     ios_base::sync_with_stdio(false); \
@@ -47,13 +53,15 @@ void solve()
     for (int i = 0; i < t; i++)
     {
         cin >> n >> m;
-        if(n%m == 0){
+        if(n % m == 0)
+        {
             cout << "YES" << endl;
-        }else
+        }
+        else
         {
             cout << "NO" << endl;
         }
-        
+
     }
 }
 

@@ -6,9 +6,15 @@
 using namespace std;
 
 template <class T>
-void ckmin(T &a, T b) { a = min(a, b); }
+void ckmin(T &a, T b)
+{
+    a = min(a, b);
+}
 template <class T>
-void ckmax(T &a, T b) { a = max(a, b); }
+void ckmax(T &a, T b)
+{
+    a = max(a, b);
+}
 
 #define ios_b                         \
     ios_base::sync_with_stdio(false); \

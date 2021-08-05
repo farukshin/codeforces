@@ -7,10 +7,10 @@ typedef long double ld;
 
 void solve()
 {
-    int n,m;
-    cin>>n>>m;
-    for(int i=0;i<n;i++)
-    	cout<<(i&1?'0':'1');
+    int n, m;
+    cin >> n >> m;
+    for(int i = 0; i < n; i++)
+        cout << (i & 1 ? '0' : '1');
 }
 
 int main()

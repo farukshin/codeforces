@@ -24,7 +24,7 @@ void solve()
         cin >> s >> p;
 
         string a, b;
-        int count = 0, j=0;
+        int count = 0, j = 0;
         bool fl = false;
 
         if (s == p)

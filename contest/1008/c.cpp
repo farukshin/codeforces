@@ -8,17 +8,17 @@ typedef long double ld;
 void solve()
 {
     int n;
-    cin>>n;
-    map<int,int> mp;
-    int mx=0;
-    for(int i=0;i<n;i++)
+    cin >> n;
+    map<int, int> mp;
+    int mx = 0;
+    for(int i = 0; i < n; i++)
     {
-    	int cur;
-    	cin>>cur;
-    	mp[cur]++;
-    	mx = max(mx, mp[cur]);
-	}
-	cout<<n-mx;
+        int cur;
+        cin >> cur;
+        mp[cur]++;
+        mx = max(mx, mp[cur]);
+    }
+    cout << n - mx;
 }
 
 int main()
